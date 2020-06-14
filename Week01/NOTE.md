@@ -95,8 +95,8 @@
     - 一张图解决问题 O(n)![a.jpg](https://pic.leetcode-cn.com/43254846f029b4814a6c9a139e4f9f89833ac54803ea50b24feb35210631f88b-a.jpg)
     - 递归写法：没有实现后续补充
   - 环形链表：https://leetcode.com/problems/linked-list-cycle
-    - 利用HashSet判断是否有重复O(n)
-    - 快慢指针O(n)
+    - 利用HashSet判断是否有重复，O(n)
+    - 快慢指针，O(n)
   - K个一组翻转链表：https://leetcode.com/problems/reverse-nodes-in-k-group/
 
 - LinkList 解题手法：解题思路固定熟悉怎么吧next和p指针换来换去，好干瘪的手法 哈哈哈
@@ -123,7 +123,21 @@
 - 特性：先进后出，Last in First out（LIFO）
 - 时间复杂度：添加、删除皆为O(1)
 - Java 源码分析 http://developer.classpath.org/doc/java/util/Stack-source.html
-  - 
+  - API 查看 搜索：stack java 8
+  - 继承类、实现接口、常用方法
+  - 这里强调自学时如何查看官网API ，尽量看英文文档解释比较好
+  - 推荐使用 Deque 双端队列
+  - 可以对比其他父类 或者同级 子类比较着学习！！！
+- 实战题目
+  - 有效的括号：https://leetcode-cn.com/problems/valid-parentheses/
+    - 最近相关性，使用栈解决，结构类似洋葱
+    - 解法：循环遇到匹配的括号替换为空字符串，O(n^2)。栈O(n)
+  - 最小栈：https://leetcode-cn.com/problems/min-stack/
+    - 设计正常栈和最小栈，O(1)
+  - 柱状图中最大的矩形面积：https://leetcode-cn.com/problems/largest-rectangle-in-histogram
+    - 未完成！！！
+  - 滑动窗口最大值：https://leetcode-cn.com/problems/sliding-window-maximum
+    - 未完成！！！
 
 ### 队列 Queue
 
@@ -131,13 +145,14 @@
 
 - 时间复杂度：添加、删除皆为O(1)
 - Java源码分析 http://fuseyism.com/classpath/doc/java/util/Queue-source.html
-  - 
+  - 在Java中以接口形式存在
+  - 对比实现类学习可以从 线程安全、并发编程相关类学习！！！
 
 ### 双端队列 Deque
 
 - 特性：两端都可以进出的 Queue
-
 - 时间复杂度：添加、删除皆为O(1)
+- 掌握java api文档学习流程
 
 ### 优先队列 Priority Queue
 
@@ -150,15 +165,28 @@
   取出：O(logn)，按照元素优先级取出
 
 - 底层实现：heap(堆)、bst（Binary Search Tree 二叉搜索树）、treap（tree + heap）
+
 - Java 文档 http://docs.oracle.com/javase/10/docs/api/java/util/PriorityQueue.html
+
+- 掌握用法，源码分析未完成 ！！！
+
+### 本周作业
+
+未完成：
+
+- 快速完成 删除排序数组中的重复项、旋转数组。
+- 详细解决 合并两个有序链表、设计循环双端队列、接雨水（待）
 
 ### 学习方法总结
 
-1. 查看源码
-2. 查看API、以及相关接口、实现类
+1. 算法题：题过遍数。思想：找重复、空间换时间、升维思想、
+2. API 文档查看（举例：stack、queue等）
+3. 高票代码学习，手写
 
 # 总结
 
 1. 后面复杂数据结构和算法的解题思想：找重复，升维思想
-2. Java中 stack、queue、deque 何如查询接口信息？何如使用？
-3. 没有很好的看国际站 高票代码，抽出时间时间少做两道题，多看国际站高票解题思路
+2. 没有很好的看国际站 高票代码，抽出时间时间少做两道题，多看国际站高票解题思路
+3. 掌握查看 API 方法（stack java 8）
+4. 本周学习效率一般，时间安排有些紧张，有点着急刷题忽略了多种解法学习和对比（查看高票代码）。
+5. 下周学习计划：回顾本周学习内容，补2-3道遗漏作业，更正学习方法
