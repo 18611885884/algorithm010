@@ -53,8 +53,16 @@
     - 解题方法：两次循环（O(n)两次遍历）、快慢指针（O(n)一次遍历）
     - 第二遍刷题：快慢指针中for循环体处理逻辑加强记忆。
   - 爬楼梯：https://leetcode.com/problems/climbing-stairs/
+    - 解题遇到问题：暴力？只考虑基本情况！
+  - 找最近重复子问题
+    - 解题方法：斐波拉契数列 f(n) = f(n - 1) + f(n - 2)，配合缓存使用，时间复杂度O(n)
   - 三数之和：https://leetcode-cn.com/problems/3sum/
-
+    - 两数之和：暴力双重for循环求解，O(n^2)，主要掌握双重循环指针不重复写法
+    - 三数之和解法：利用 LinkedHashSet 数据结构，存储不重复结果。三重循环O(n^3)
+      - Arrays.sort  O(n * logn)
+      - 夹逼法 O(n^2) 可以理解成双指针，去重技巧需要加强记忆
+      - 细节，最左边值大于0 一定没有符合条件结果。利用while 去除中间指针右边重复值情况。去除右边指针左边重复值情况。
+  
 - Java 源码分析 ArrayList
   - 核心点：System.arraycopy();
   - add：将原数组复制两段（0 ~ index, index + 1 ~ size - index），将index 赋值
@@ -75,7 +83,23 @@
   O(n)：lookup（查找）
 
 - Java 源码分析 LinkList（双向链表）
+  
   - 重新对index - 1 的下节点，原index位置的上节点，目标index的上下节点重新定义。
+  
+- 实战题目
+
+  - 反转链表：https://leetcode.com/problems/reverse-linked-list/
+    - 循环 O(n)，好理解，步骤参考代码注释
+    - 递归 O(n)，代码简洁
+  - 两两交换链表中的节点：https://leetcode.com/problems/swap-nodes-in-pairs
+    - 一张图解决问题 O(n)![a.jpg](https://pic.leetcode-cn.com/43254846f029b4814a6c9a139e4f9f89833ac54803ea50b24feb35210631f88b-a.jpg)
+    - 递归写法：没有实现后续补充
+  - 环形链表：https://leetcode.com/problems/linked-list-cycle
+    - 利用HashSet判断是否有重复O(n)
+    - 快慢指针O(n)
+  - K个一组翻转链表：https://leetcode.com/problems/reverse-nodes-in-k-group/
+
+- LinkList 解题手法：解题思路固定熟悉怎么吧next和p指针换来换去，好干瘪的手法 哈哈哈
 
 #### 跳表
 
@@ -137,3 +161,4 @@
 
 1. 后面复杂数据结构和算法的解题思想：找重复，升维思想
 2. Java中 stack、queue、deque 何如查询接口信息？何如使用？
+3. 没有很好的看国际站 高票代码，抽出时间时间少做两道题，多看国际站高票解题思路
