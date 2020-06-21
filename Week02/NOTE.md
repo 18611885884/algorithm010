@@ -1,4 +1,4 @@
-## 第5课 哈希表|映射|集合
+## 第二周 第5课 哈希表|映射|集合
 
 - 理解：也叫离散表，根据关键码值（key - value）而直接进行访问的数据结构。通过把关键码值映射到表中的一个位置来访问记录，加快访问速度。
 
@@ -245,6 +245,53 @@ n = 9;
     ```
 
     
+
+## 堆|二叉堆|图
+
+### 堆
+
+- heap：可以迅速找到最大或者最小值的数据结构。根节点最大叫大顶堆，根节点最小叫小顶堆。常见二叉堆和斐波拉契堆。
+- 大顶堆：
+  - find-max：O(1)
+  - delete：O(logn)
+  - insert(create)：O(logn) or O(1)，严格的斐波拉契堆可以达到O(1)
+  - ![image-20200621200714320](/Users/luozhengqi/Library/Application Support/typora-user-images/image-20200621200714320.png)
+
+### 二叉堆
+
+- 是一颗完全数，除了叶子节点，其他节点均是满的。树中任意节点值大于等于其子节点值。
+- 通过数组实现，并满足一定关系
+  - 索引为 i 的左子节点的索引是：2 * i + 1
+  - 索引为 i 的右子节点的索引是：2 * i + 2
+  - 索引为 i 的根节点的索引是：(i - 1) / 2
+
+- insert 操作 O(logn)
+  - 新元素一律插入到堆的尾部
+  - 依次向上调整数的结构，直到根即可
+  - HeapifyUp
+- Delete max 操作O(logn)
+  - 将堆尾元素替换到顶部
+  - 从根部依次向下调整树的结构，直到尾部即可
+  - HeapifyDown
+- 二叉堆是堆（优先队列）的一种常见切简单的实现，但不是最优实现
+
+### 实战题目
+
+- 最小的k个数：https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/
+  - 
+- 滑动窗口最大值：https://leetcode-cn.com/problems/sliding-window-maximum/
+
+
+
+### 图
+
+- Graph(V, E)
+- V - vertex：点
+  - 度 - 入度和出度
+  - 点于点之间是否连通
+- E - edge：边
+  - 有向和无向（单行线）
+  - 权重（边长）
 
 
 
