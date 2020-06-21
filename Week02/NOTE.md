@@ -278,10 +278,11 @@ n = 9;
 ### 实战题目
 
 - 最小的k个数：https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/
-  - 
+  - 数组排序取前 k 个，O(nlogn)
+  - 堆实现，优先队列，O(Nlogk)
 - 滑动窗口最大值：https://leetcode-cn.com/problems/sliding-window-maximum/
-
-
+  - 优先队列，O(nlogk) ，此处优先队列取出的时间复杂度是O(logn)
+  - 双端队列，O(n)
 
 ### 图
 
@@ -300,3 +301,8 @@ n = 9;
 - 树的面试题一般都是考察递归，为什么
   - 和树的数据结构有关，每个节点有可能既是其他节点的子节点，又是某个节点的根节点，具有重复性
 
+## 本周作业
+
+- N叉树的层序遍历：https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/
+
+- 
