@@ -304,5 +304,39 @@ n = 9;
 ## 本周作业
 
 - N叉树的层序遍历：https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/
+  - 层序遍历使用广度优先。O(n)
 
-- 
+  - ```java
+    List<Integer> values = new ArrayList<>();
+    Queue<Node> queue = new LinkedList<>();
+    queue.add(root);
+    while (!queue.isEmpty()) {
+        Node nextNode = queue.remove();
+        values.add(nextNode.val);
+        for (Node child : nextNode.children) {
+            queue.add(child);
+        }
+    }
+    ```
+
+  - 前、中、后序使用深度优先 。O(n+k)
+
+  - ```java
+    // 前序例子
+    LinkedList<TreeNode> stack = new LinkedList<>();
+    stack.add(root);
+    while (!stack.isEmpty()) {
+      TreeNode node = stack.pollLast();
+      // 值 node.val
+      if (node.right != null) {
+        stack.add(node.right);
+      }
+      if (node.left != null) {
+        stack.add(node.left);
+      }
+    }
+    return output;
+    ```
+
+    
+
