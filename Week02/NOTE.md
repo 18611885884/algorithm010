@@ -165,6 +165,7 @@ n = 9;
 1. 有效的字母异位词：https://leetcode-cn.com/problems/valid-anagram/description/
    - 暴力：sort 先排序，再判断是否相等。O(nlogn)
    - 哈希表：new int[26] -> char - ‘a’。O(n)
+   - 第三遍刷题：哈希表可一遍循环处理
 2. 字母异位词分组：https://leetcode-cn.com/problems/group-anagrams/
    - 暴力：循环 -> 排序，利用Map存储，key值为排序后字符串。O(K*NlonN)
    - 哈希表：循环 -> new int[26] -> char - ‘a’，利用Map存储，key值为“0#1#2#0#”（循环int26拼接）。O(K*N)
@@ -338,5 +339,17 @@ n = 9;
     return output;
     ```
 
-    
+- 丑数：https://leetcode-cn.com/problems/chou-shu-lcof
 
+  - 因子只包含2、3、5的数，
+
+  - 动态规划：O(n)	
+
+    ```java
+    int ma = res[a] * 2, mb = res[b] * 3, mc = res[c] * 5;
+    res[i] = Math.min(Math.min(ma, mb), mc);
+    ```
+
+- 前K个高频元素：https://leetcode-cn.com/problems/top-k-frequent-elements
+  - 优先队列，堆实现
+  - O(n)
