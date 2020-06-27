@@ -29,6 +29,15 @@
   - 递归处理，先写出递归模板，不考虑有效括号问题。再优化代码仅保留有效括号
 - 二叉树的最大深度：https://leetcode-cn.com/problems/maximum-depth-of-binary-tree
   - 优化后5行代码搞定，递归
+- 翻转二叉树：https://leetcode-cn.com/problems/invert-binary-tree/description/
+  - 递归思想完成即可
+- 验证二叉搜索树
+  - 迭代：利用栈依次比较，有不满足条件直接退出。
+  - 递归：利用两个临时变量记录当前节点对于下一层节点的含义，用于比较，不满足直接退出。
+- 二叉树的最小深度
+  - 递归：注意层次结束条件，左右子节点都不存在才是层的结束
+- 二叉树的序列化和反序列化
+  - 后补充 ------------------------------
 
 ## 第八课 分治 | 回溯
 
@@ -56,6 +65,14 @@
     // restore current status 重置当前状态，全局变量值回复
   }
   ```
+
+### 实战题目
+
+- Pow(x, n)：https://leetcode-cn.com/problems/powx-n/
+  - 分支基本思维方式，相同重复子问题做规划，O(logn)
+- 子集：https://leetcode-cn.com/problems/subsets/
+  - 递归中，改变了参数状态，在结束时需要还原状态
+  - 迭代后补充-----------------------------
 
 ### 回溯
 

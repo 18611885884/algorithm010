@@ -23,10 +23,11 @@ public class MyPow {
      * n 是 32 位有符号整数，其数值范围是 [−231, 231 − 1]
      */
     public double myPow(double x, int n) {
-        return n > 0 ? quickMul(x, n) : 1 / quickMul(x , -n);
+        long N = n;
+        return N > 0 ? quickMul(x, N) : 1.0 / quickMul(x , -N);
     }
 
-    private double quickMul(double x, int n) {
+    private double quickMul(double x, long n) {
         if(n == 0){
             return 1.0;
         }
