@@ -73,11 +73,31 @@
 - 子集：https://leetcode-cn.com/problems/subsets/
   - 递归中，改变了参数状态，在结束时需要还原状态
   - 迭代后补充-----------------------------
+- 多数元素：https://leetcode-cn.com/problems/majority-element/description/
+  - hash，O(n)
+  - 排序返回中间位置元素，O(nlogn)
+  - 分治，比较两边最多元素，两边最多元素相同则返回左边，否则判断最多返回上一层
 
 ### 回溯
 
 - 递归的更高级算法，分步解决问题的过程中，发现答案不能解决问题，需要取消上一步甚至上几步的计算，在通过其他分步解答再次尝试寻找答案。
 
-### 实战题目
+### 本周作业
 
-- 
+- 二叉树的最近公共祖先：https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/
+
+  - ```java
+    // left && right 在条分支上，公共祖节点不是 p 或 q
+    // root.val == p.val || root.val == q.val 公共节点是 p 或者 q 的情况
+    if((left && right) || (root.val == p.val || root.val == q.val) && (left || right)){
+      ans = root;
+    }
+    return left || right || (root.val == p.val || root.val == q.val);
+    ```
+
+  - 关键代码：判断左右是否有，左右有右有，当前为祖先。左或者右有，当前是其中一个，当前是祖先
+  - O(n)
+
+- 全排列：https://leetcode-cn.com/problems/permutations/solution/quan-pai-lie-by-leetcode-solution-2/
+  - todo
+
