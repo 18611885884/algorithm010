@@ -5,7 +5,6 @@ import java.util.List;
 
 /**
  *    [46]全排列
- *
  * @ClassName Permute
  * @Description
  * @Author luozhengqi
@@ -13,32 +12,28 @@ import java.util.List;
  * @Version 1.0
  **/
 public class Permute {
-    public void backtrack(int n,
-                          ArrayList<Integer> output,
-                          List<List<Integer>> res,
-                          int first) {
-        // 所有数都填完了
-        if (first == n)
-            res.add(new ArrayList<Integer>(output));
-        for (int i = first; i < n; i++) {
-            // 动态维护数组
-            Collections.swap(output, first, i);
-            // 继续递归填下一个数
-            backtrack(n, output, res, first + 1);
-            // 撤销操作
-            Collections.swap(output, first, i);
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
+        if (nums == null || nums.length == 0){
+            return res;
+        }
+        permute(res, new ArrayList<Integer>(), 0, nums);
+        return res;
+    }
+
+    private void permute(List<List<Integer>> res, ArrayList<Integer> integers, int i, int[] nums) {
+        if(i == nums.length){
+            res.add(new ArrayList<>(integers));
+            return;
+        }
+        for(int j = i; j < nums.length; j++){
+            Collections.swap(integers, i, j);
+            permute(res, integers, i + 1, nums);
+            Collections.swap(integers, i, j);
         }
     }
 
-    public List<List<Integer>> permute(int[] nums) {
-        List<List<Integer>> res = new LinkedList();
-
-        ArrayList<Integer> output = new ArrayList<Integer>();
-        for (int num : nums)
-            output.add(num);
-
-        int n = nums.length;
-        backtrack(n, output, res, 0);
-        return res;
+    public static void main(String[] args) {
+        System.out.println(new Permute().permute(new int[]{1,2,3}));
     }
 }
