@@ -34,14 +34,14 @@ public class MoveZeroes {
      * 输出: [1,3,12,0,0]
      */
     public void moveZeroes1(int[] nums) {
-        if (nums.length <= 0) {
-            return ;
-        }
-        for (int i = 0, j = 0; i < nums.length; i++) {
-            if (nums[i] != 0) {
+        if(nums.length == 0) return;
+        // 快慢指针，体会数组算法，下标（索引）变化
+        for(int i = 0, j = 0; i < nums.length; i++){
+            if(nums[i] != 0){
                 if(i > j){
-                    nums[i] = nums[j];
-                    nums[j] = 0;
+                    // 元素位置交换
+                    nums[j] = nums[i];
+                    nums[i] = 0;
                 }
                 j++;
             }

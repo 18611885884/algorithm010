@@ -47,7 +47,7 @@
   O(n)：insert、delete（增删）
 
 - 实战题目
-  - 盛水最多的容器：https://leetcode-cn.com/problems/container-with-most-water/
+  - 盛最多水的容器：https://leetcode-cn.com/problems/container-with-most-water/
     - 解题方法：双重循环（O(n^2)）、双指针（O(n)）
   - 移动零：https://leetcode-cn.com/problems/move-zeroes/
     - 解题方法：两次循环（O(n)两次遍历）、快慢指针（O(n)一次遍历）
