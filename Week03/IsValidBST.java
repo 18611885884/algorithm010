@@ -28,16 +28,19 @@ public class IsValidBST {
      */
     public boolean isValidBST(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
+        // 关键点 注意范围使用
         double vi = - Double.MAX_VALUE;
-
         while (!stack.empty() || root != null){
             while (root != null){
+                // 栈先进后出，依次放入根节点（左）
                 stack.push(root);
                 root = root.left;
             }
             root = stack.pop();
+            // 中序 递增
             if(root.val <= vi) return false;
             vi = root.val;
+            // 左根处理完  处理右节点
             root = root.right;
         }
         return true;

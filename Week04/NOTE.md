@@ -83,7 +83,8 @@
 
 ### 实战题目
 
-
+- 柠檬水找零：https://leetcode-cn.com/problems/lemonade-change/description/
+- 买卖股票的最佳时机 II：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/description/
 
 
 
@@ -120,9 +121,16 @@
 
 ### 实战题目
 
-
+- x的平方根：https://leetcode-cn.com/problems/sqrtx/
+- 有效的完全平方数：https://leetcode-cn.com/problems/valid-perfect-square/
 
 ## 课后作业
 
+- 单词接龙：https://leetcode-cn.com/problems/word-ladder/description/
+- 岛屿数量：https://leetcode-cn.com/problems/number-of-islands/
 
+- 搜索旋转排序数组：https://leetcode-cn.com/problems/search-in-rotated-sorted-array/
+
+- 搜索二维矩阵：https://leetcode-cn.com/problems/search-a-2d-matrix/
+- 寻找旋转排序数组中的最小值：https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/
 

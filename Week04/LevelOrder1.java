@@ -26,12 +26,8 @@ public class LevelOrder1 {
             for(int i = 0; i < nodes; i++){
                 TreeNode cur = queue.removeFirst();
                 ceng.add(cur.val);
-                if(cur.left != null){
-                    queue.add(cur.left);
-                }
-                if(cur.right != null){
-                    queue.add(cur.right);
-                }
+                if(cur.left != null) queue.add(cur.left);
+                if(cur.right != null) queue.add(cur.right);
             }
             res.add(ceng);
         }

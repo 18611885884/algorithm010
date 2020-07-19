@@ -25,7 +25,7 @@ public class LetterCombinations {
     }};
     public List<String> letterCombinations(String digits) {
         if(digits.length() == 0){
-            return null;
+            return new ArrayList<>();
         }
         List<String> result = new ArrayList<>();
         search(result, 0, "", digits);
@@ -37,9 +37,8 @@ public class LetterCombinations {
             result.add(str);
             return;
         }
-        i++;
-        char chNum = digits.charAt(i);
-        for(char zm:map.keySet()){
+        char chNum = digits.charAt(i++);
+        for(char zm:map.get(chNum).toCharArray()){
             search(result, i, str + zm, digits);
         }
     }

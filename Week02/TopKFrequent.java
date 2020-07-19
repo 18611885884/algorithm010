@@ -21,26 +21,17 @@ public class TopKFrequent {
      * 输出: [1]
      */
     public int[] topKFrequent(int[] nums, int k) {
-        int[] res = new int[k];
-        Map<Integer, Integer> count = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
+        PriorityQueue<Integer> queue = new PriorityQueue<>((k1, k2) -> map.get(k2) - map.get(k1));
         for(int i : nums){
-            count.put(i, count.getOrDefault(i, 0) + 1);
+            map.put(i, map.getOrDefault(i, 0) + 1);
         }
-        PriorityQueue<Integer> pri = new PriorityQueue<Integer>((n1, n2) -> count.get(n1) - count.get(n2));
-        for(int i : count.keySet()){
-            if(pri.size() < k){
-                pri.add(i);
-            }else{
-                int j = pri.poll();
-                if (count.get(j) > count.get(i)) {
-                    pri.add(j);
-                } else {
-                    pri.add(i);
-                }
-            }
+        for(Integer i : map.keySet()){
+            queue.add(i);
         }
+        int[] res = new int[k];
         for(int i = 0; i < k; i++){
-            res[i] = pri.poll();
+            res[i] = queue.poll();
         }
         return res;
     }

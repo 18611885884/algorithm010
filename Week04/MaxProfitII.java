@@ -6,7 +6,7 @@
  * @Date 2020-07-06 12:45
  * @Version 1.0
  **/
-public class MaxProfit {
+public class MaxProfitII {
     public int maxProfit(int[] prices) {
         if(prices.length == 0){
             return 0;
